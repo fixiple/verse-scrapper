@@ -48,7 +48,7 @@ class bibleSearch:
 		"""
 			TO DO: implement filesearch to find and parse the file selected
 		"""
-		file=Path("xml_files/bible_louis_second_french.xml")
+		file=Path("xml/bible_louis_second_french.xml")
 		filePathWindows = PureWindowsPath(file)
 		
 		return ET.parse(file)
