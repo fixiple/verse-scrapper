@@ -8,8 +8,7 @@ Scraps bible verses from XML file and makes an output
 - export app from .py to .exe
 - Add a button inside popup, to add the parsed verses inside church XML file
 - Use regex expressions to check for bookname while typing and suggests/autocomplete the rest
-- find a way to add text decoration inside popup text(bold, underline for example) ()
-  ----> maybe change fileformat to .rtf?
+- find a way to add text decoration inside popup text(bold, underline for example) (maybe change fileformat to .rtf?)
 - Try implementing a suggestion for the chapter and verses of the current book
 
 ## DEPENDENCIES
