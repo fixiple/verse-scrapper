@@ -15,6 +15,7 @@ Scraps bible verses from XML file and makes an output
 ## DEPENDENCIES
 
 This project requires [PySimpleGUI](https://pysimplegui.readthedocs.io/)
+***
 [Link towards the Documentation](https://pysimplegui.readthedocs.io/en/latest/call%20reference/)
 
 ## Installation of module
