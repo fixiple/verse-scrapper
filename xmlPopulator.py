@@ -9,7 +9,7 @@ class populator:
 	
 	@classmethod
 	def getCurrentPath(self):
-		""" returns the path of the current python file """
+		""" returns the path of this python file """
 		dir_path = os.getcwd()
 		return dir_path
 	
@@ -50,7 +50,9 @@ class populator:
 			requires no arguments
 			this function returns the name of created file
 		"""
-		path=self.setPath()
+		
+		#gets the current path of python file
+		path=self.setPath(self.getCurrentPath())
 		
 		# to get a list of files contained inside
 		# files=os.listdir(os.getcwd())
