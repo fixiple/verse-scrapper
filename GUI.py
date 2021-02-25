@@ -29,14 +29,15 @@ def main_window():
 
 def main():
 	window=main_window()
-	
+	pathOfFile=os.getcwd()
+	#Debug
+	#print(pathOfFile+"\fichier.txt")
+	#we check if the file already exists and we remove it
+	if os.path.isfile(pathOfFile+"\\fichier.txt"):#returns true if file exists
+		os.remove(pathOfFile+"\\fichier.txt")
+
 	while True:
 	#using rtf because txt doesn't have text decorators??(check for texdecorators in txt file)
-	#we check if the file already exists
-		if os.path.isfile("/fichier.txt"):#returns true if exists
-			os.remove("fichier.txt")
-		else:
-			pass
 	
 		event, values = window.read()
 		if event == '-RECH-':
@@ -54,8 +55,8 @@ def main():
 					continue
 		
 
-
-			with open("fichier.txt","w") as w:
+			with open("fichier.txt","x") as w:
+				print("file created")
 				try:
 					BS1=bibleSearch(livre,chap,Debut)
 				except NameError:
@@ -69,11 +70,10 @@ def main():
 				try:
 					for verse in range(Debut, Fin+1):
 						versetext=BS1.parseBible(livre, chap, verse)
-						w.write(versetext+"\n")	
+						w.write(str(verse)+". "+versetext+"\n")	
 				except EH.ParsingError as e:
 					sg.Popup("Erreur: ", e)
 					continue
-					
 			with open("fichier.txt","r") as r:
 				#ouverture du fichier en mode lecture
 				text=r.read()
@@ -85,12 +85,13 @@ def main():
 					n=n+1
 					if n > 1:
 						break
-		
-		elif event == None:
+
+		elif event == sg.WIN_CLOSED or event == 'Exit' or event == 'None':
 			#we check if the file still exists
-			if os.path.isfile("/fichier.txt"): #returns true if exists
-				os.remove("fichier.txt")
-			
+			if os.path.isfile(pathOfFile+"\\fichier.txt"): #returns true if exists
+				print("file still there")
+				os.remove(pathOfFile+"\\fichier.txt")
+			print("nox file is deleted")
 			window.close()
 			break
 
