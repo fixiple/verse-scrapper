@@ -20,7 +20,7 @@ def main_window():
 	layout = [[sg.Text('book'), sg.Input(do_not_clear=(False))],
           [sg.Text('chapter'), sg.Input(do_not_clear=(False))],
           [sg.Text('verse'), sg.Input(size=(15,1),do_not_clear=(False)),sg.Text('to'), sg.Input(size=(15,1),do_not_clear=(False))],
-          [sg.Button('parse', key='-RECH-', bind_return_key=True), sg.Button('reset')] ]
+          [sg.Button('parse', key='-RECH-', bind_return_key=True), sg.FileBrowse('XML File', key='-SELECT-'), sg.Text('Church file not selected', font=('bold'), text_color="Red")] ]
 
 	window = sg.Window('Verse Helper', layout, return_keyboard_events=True, auto_close=False)
 	
@@ -85,6 +85,14 @@ def main():
 					n=n+1
 					if n > 1:
 						break
+
+		elif event == '-SELECT-':
+			#TO DO: file selection of church XML file (later automate to find it?) 
+			#change txtcolor and content to green and "Church File Selected"
+			#see doc : https://pysimplegui.readthedocs.io/en/latest/call%20reference/#button-element 
+			#under FileBrowse
+
+			pass
 
 		elif event == sg.WIN_CLOSED or event == 'Exit' or event == 'None':
 			#we check if the file still exists
