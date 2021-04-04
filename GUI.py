@@ -117,7 +117,7 @@ def main():
 			#storing the value of -T- event
 			val = values["-T-"]
 			
-			#TO DO: file selection of church XML file -DONE- (later automate to find it? -LATER-)
+			
 			print("event change Triggered in '-T-'")
 			
 			if PurePath(val).match('*.fws'):
